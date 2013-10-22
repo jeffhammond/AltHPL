@@ -178,6 +178,8 @@ int HPL_reduce
  * End of HPL_reduce
  */
 #else
-   return MPI_Reduce( MPI_IN_PLACE, BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), OP, ROOT, COMM );
+    int rank;
+    MPI_Comm_rank( COMM, &rank );
+    return MPI_Reduce( rank==ROOT ? MPI_IN_PLACE : BUFFER, BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), OP, ROOT, COMM );
 #endif
 }
