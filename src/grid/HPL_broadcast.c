@@ -99,7 +99,7 @@ int HPL_broadcast
  * ---------------------------------------------------------------------
  */ 
 #ifndef BE_REALLY_STUPID
-   return MPI_Bcast( BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), ROOT, COMM);
+   return MPI_Bcast( BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), ROOT, COMM );
 #else
 /*
  * .. Local Variables ..
