@@ -76,6 +76,9 @@ int HPL_barrier
  *
  * ---------------------------------------------------------------------
  */ 
+#ifndef BE_REALLY_STUPID
+   return MPI_Barrier( COMM );
+#else
 /*
  * .. Local Variables ..
  */
@@ -87,4 +90,5 @@ int HPL_barrier
 /*
  * End of HPL_barrier
  */
+#endif
 }
