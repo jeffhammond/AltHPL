@@ -105,10 +105,7 @@ int HPL_reduce
  *
  * ---------------------------------------------------------------------
  */ 
-#ifndef BE_REALLY_STUPID
-   return MPI_Reduce( MPI_IN_PLACE, BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), 
-                      HPL_2_MPI_OP( OP), ROOT, COMM);
-#else
+#ifdef BE_REALLY_STUPID
 /*
  * .. Local Variables ..
  */
@@ -180,5 +177,7 @@ int HPL_reduce
 /*
  * End of HPL_reduce
  */
+#else
+   return MPI_Reduce( MPI_IN_PLACE, BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), OP, ROOT, COMM );
 #endif
 }

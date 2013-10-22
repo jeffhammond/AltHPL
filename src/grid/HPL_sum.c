@@ -49,6 +49,8 @@
  */
 #include "hpl.h"
 
+#ifdef BE_REALLY_STUPID
+
 #ifdef STDC_HEADERS
 void HPL_sum
 (
@@ -116,3 +118,5 @@ void HPL_sum
  * End of HPL_sum
  */
 }
+
+#endif // BE_REALLY_STUPID

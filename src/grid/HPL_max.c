@@ -49,6 +49,8 @@
  */
 #include "hpl.h"
 
+#ifdef BE_REALLY_STUPID
+
 #ifdef STDC_HEADERS
 void HPL_max
 (
@@ -116,3 +118,5 @@ void HPL_max
  * End of HPL_max
  */
 }
+
+#endif // BE_REALLY_STUPID

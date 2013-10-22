@@ -91,8 +91,15 @@ typedef struct HPL_S_grid
  * Data Structures
  * ---------------------------------------------------------------------
  */
+#ifdef BE_REALLY_STUPID
 typedef void (*HPL_T_OP)
 (  const int,       const void *,    void *,          const HPL_T_TYPE );
+#else
+typedef MPI_Op HPL_T_OP;
+#define HPL_max MPI_MAX
+#define HPL_min MPI_MIN
+#define HPL_sum MPI_SUM
+#endif
 /*
  * ---------------------------------------------------------------------
  * #define macros definitions

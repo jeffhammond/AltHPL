@@ -49,6 +49,8 @@
  */
 #include "hpl.h"
 
+#ifdef BE_REALLY_STUPID
+
 #ifdef STDC_HEADERS
 void HPL_min
 (
@@ -116,3 +118,5 @@ void HPL_min
  * End of HPL_min
  */
 }
+
+#endif // BE_REALLY_STUPID
