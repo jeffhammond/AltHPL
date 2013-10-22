@@ -98,6 +98,10 @@ int HPL_all_reduce
  *
  * ---------------------------------------------------------------------
  */ 
+#ifndef BE_REALLY_STUPID
+   return MPI_Allreduce( MPI_IN_PLACE, BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), 
+                         HPL_2_MPI_OP( OP), COMM);
+#else
 /*
  * .. Local Variables ..
  */
@@ -111,4 +115,5 @@ int HPL_all_reduce
 /*
  * End of HPL_all_reduce
  */
+#endif
 }
