@@ -67,7 +67,7 @@ ARCH         = MacMPI
 # - HPL Directory Structure / HPL library ------------------------------
 # ----------------------------------------------------------------------
 #
-TOPdir       = $(HOME)/eclipse/hpl-2.1
+TOPdir       = $(HOME)/eclipse/HPL
 INCdir       = $(TOPdir)/include
 BINdir       = $(TOPdir)/bin/$(ARCH)
 LIBdir       = $(TOPdir)/lib/$(ARCH)
