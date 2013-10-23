@@ -144,9 +144,9 @@ int HPL_bcast_1ring( PANEL, IFLAG )
  * forward it to the next.  Otherwise, inform the caller that the panel
  * has still not been received.
  */
-   rank = PANEL->grid->mycol;
-   comm = PANEL->grid->row_comm;
-   root = PANEL->pcol;
+   rank  = PANEL->grid->mycol;
+   comm  = PANEL->grid->row_comm;
+   root  = PANEL->pcol;
    msgid = PANEL->msgid;
 
 #ifdef BE_REALLY_STUPID
