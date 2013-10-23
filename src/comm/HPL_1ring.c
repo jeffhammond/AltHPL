@@ -149,7 +149,7 @@ int HPL_bcast_1ring( PANEL, IFLAG )
    root  = PANEL->pcol;
    msgid = PANEL->msgid;
 
-#ifdef BE_REALLY_STUPID
+#if 1
    if( rank == root )
    {
       ierr = MPI_Send( _M_BUFF, _M_COUNT, _M_TYPE, MModAdd1( rank,
@@ -178,6 +178,7 @@ int HPL_bcast_1ring( PANEL, IFLAG )
       }
    }
 #else
+   /* this will deadlock with lookahead > 1 */
    ierr = MPI_Bcast( _M_BUFF, _M_COUNT, _M_TYPE, root , comm );
 #endif
 /*
