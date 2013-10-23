@@ -144,9 +144,12 @@ int HPL_bcast_1ring( PANEL, IFLAG )
  * forward it to the next.  Otherwise, inform the caller that the panel
  * has still not been received.
  */
-   rank = PANEL->grid->mycol; comm  = PANEL->grid->row_comm;
-   root = PANEL->pcol;        msgid = PANEL->msgid;
+   rank = PANEL->grid->mycol;
+   comm = PANEL->grid->row_comm;
+   root = PANEL->pcol;
+   msgid = PANEL->msgid;
 
+#ifdef BE_REALLY_STUPID
    if( rank == root )
    {
       ierr = MPI_Send( _M_BUFF, _M_COUNT, _M_TYPE, MModAdd1( rank,
@@ -174,6 +177,9 @@ int HPL_bcast_1ring( PANEL, IFLAG )
          else { *IFLAG = HPL_KEEP_TESTING; return( *IFLAG ); }
       }
    }
+#else
+   ierr = MPI_Bcast( _M_BUFF, _M_COUNT, _M_TYPE, root , comm );
+#endif
 /*
  * If the message was received and being forwarded,  return HPL_SUCCESS.
  * If an error occured in an MPI call, return HPL_FAILURE.
