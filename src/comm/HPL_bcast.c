@@ -92,9 +92,14 @@ int HPL_bcast
 /* ..
  * .. Executable Statements ..
  */
-   if( PANEL == NULL ) { *IFLAG = HPL_SUCCESS; return( HPL_SUCCESS ); }
-   if( PANEL->grid->npcol <= 1 )
-   {                     *IFLAG = HPL_SUCCESS; return( HPL_SUCCESS ); }
+   if( PANEL == NULL ) { 
+       *IFLAG = HPL_SUCCESS; 
+       return( HPL_SUCCESS ); 
+   }
+   if( PANEL->grid->npcol <= 1 ) {
+       *IFLAG = HPL_SUCCESS; 
+       return( HPL_SUCCESS );
+   }
 /*
  * Retrieve the selected virtual broadcast topology
  */
