@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.1 - October 26, 2012                          
+ *    HPL - 2.2 - February 24, 2016                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -91,15 +91,8 @@ typedef struct HPL_S_grid
  * Data Structures
  * ---------------------------------------------------------------------
  */
-#ifdef BE_REALLY_STUPID
 typedef void (*HPL_T_OP)
 (  const int,       const void *,    void *,          const HPL_T_TYPE );
-#else // BE_REALLY_STUPID
-typedef MPI_Op HPL_T_OP;
-#define HPL_max MPI_MAX
-#define HPL_min MPI_MIN
-#define HPL_sum MPI_SUM
-#endif // BE_REALLY_STUPID
 /*
  * ---------------------------------------------------------------------
  * #define macros definitions
@@ -191,7 +184,6 @@ STDC_ARGS( (
    MPI_Comm
 ) );
 
-#ifdef BE_REALLY_STUPID
 void                             HPL_max
 STDC_ARGS( (
    const int,
@@ -213,9 +205,8 @@ STDC_ARGS( (
    void *,
    const HPL_T_TYPE
 ) );
-#endif // BE_REALLY_STUPID
 
-#endif // HPL_GRID_H
+#endif
 /*
  * End of hpl_grid.h
  */

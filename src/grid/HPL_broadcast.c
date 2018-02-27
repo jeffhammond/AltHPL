@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.1 - October 26, 2012                          
+ *    HPL - 2.2 - February 24, 2016                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -98,7 +98,6 @@ int HPL_broadcast
  *
  * ---------------------------------------------------------------------
  */ 
-#ifdef BE_REALLY_STUPID
 /*
  * .. Local Variables ..
  */
@@ -145,8 +144,4 @@ int HPL_broadcast
 /*
  * End of HPL_broadcast
  */
-#else
-   return MPI_Bcast( BUFFER, COUNT, HPL_2_MPI_TYPE( DTYPE ), ROOT, COMM );
-#endif
 }
-

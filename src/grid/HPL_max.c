@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.1 - October 26, 2012                          
+ *    HPL - 2.2 - February 24, 2016                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -48,8 +48,6 @@
  * Include files
  */
 #include "hpl.h"
-
-#ifdef BE_REALLY_STUPID
 
 #ifdef STDC_HEADERS
 void HPL_max
@@ -118,5 +116,3 @@ void HPL_max
  * End of HPL_max
  */
 }
-
-#endif // BE_REALLY_STUPID

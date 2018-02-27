@@ -1,6 +1,6 @@
 ==============================================================
  High Performance Computing Linpack Benchmark (HPL)
- HPL - 2.1 - October 26, 2012
+ HPL - 2.2 - February 24, 2016
 ==============================================================
 
  1) Retrieve the tar file, then
@@ -13,7 +13,7 @@
  2) Create a file Make.<arch> in the  top-level directory. For
  this purpose,  you  may  want  to re-use one contained in the
  setup directory. This file essentially contains the compilers
- and libraries with their paths to be used.
+ and librairies with their paths to be used.
 
  3) Type "make arch=<arch>". This  should create an executable
  in the bin/<arch> directory called xhpl.

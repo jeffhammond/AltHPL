@@ -1,6 +1,6 @@
 /* 
  * -- High Performance Computing Linpack Benchmark (HPL)                
- *    HPL - 2.1 - October 26, 2012                          
+ *    HPL - 2.2 - February 24, 2016                          
  *    Antoine P. Petitet                                                
  *    University of Tennessee, Knoxville                                
  *    Innovative Computing Laboratory                                 
@@ -92,14 +92,9 @@ int HPL_bcast
 /* ..
  * .. Executable Statements ..
  */
-   if( PANEL == NULL ) { 
-       *IFLAG = HPL_SUCCESS; 
-       return( HPL_SUCCESS ); 
-   }
-   if( PANEL->grid->npcol <= 1 ) {
-       *IFLAG = HPL_SUCCESS; 
-       return( HPL_SUCCESS );
-   }
+   if( PANEL == NULL ) { *IFLAG = HPL_SUCCESS; return( HPL_SUCCESS ); }
+   if( PANEL->grid->npcol <= 1 )
+   {                     *IFLAG = HPL_SUCCESS; return( HPL_SUCCESS ); }
 /*
  * Retrieve the selected virtual broadcast topology
  */
